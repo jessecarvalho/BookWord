@@ -1,7 +1,7 @@
 # BookWord
  BookWord é um site de download de livros, o projeto tem o objetivo único de treino e aprendizado.
- Tecnologias utilizadas no projeto: HTML, CSS, PHP, Bootstrap, MYsql
- Endereço de hospedagem: http://bookword.rf.gd/index.php
+ Tecnologias utilizadas no projeto: HTML, CSS, PHP, Bootstrap, MYsql. <br>
+ Endereço de hospedagem: http://bookword.rf.gd/index.php.
  O que foi feito:
  - Páginas totalmente responsivas utilizando-se um design moderno e elegante.
  - Sistema de pesquisa em banco de dados utilizando-se de PHP.
