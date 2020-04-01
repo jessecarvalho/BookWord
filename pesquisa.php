@@ -42,15 +42,13 @@
         <?php 
 
         require_once('conectabanco.php');
-
         $objbd = new bd();
         $objbd->conecta_mysql();
 
         //$sql = "select * from usuarios where usuario = '$usuario' ";
         $pesquisa = $_POST['search'];
         $sqlLivro = "select * from livros as a inner join autor as b on a.id = b.id_autor where a.nomeLivro like '%$pesquisa%' or b.autor like '%$pesquisa%'  ";
-        $con = mysqli_connect('localhost', 'root', '', 'livros') or die("Erro ao conectar ao servidor:");
-        $resultado_id = mysqli_query($con, $sqlLivro);
+        $resultado_id = mysqli_query($objbd->conecta_mysql(), $sqlLivro);
         $encontrado = 0;
         if($resultado_id){
             while($livros = mysqli_fetch_array($resultado_id)){
@@ -74,8 +72,8 @@
           
         }
         if ($encontrado == 0){
-                      echo 'Nenhum livro encontrado';
-                  }
+          echo 'Nenhum livro encontrado';
+        }
 
         ?>
         </div>  

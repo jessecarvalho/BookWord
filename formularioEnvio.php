@@ -1,10 +1,7 @@
-
-
-
 <!doctype html>
 <html lang="pt-br">
   <head>
-    <!-- Required meta tags -->
+    <!-- Meta tags padrões de HTML + favicon + links para estilos -->
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="estilos/style.css">
     <link rel="stylesheet" type="text/css" href="estilos/listaStyle.css">
@@ -15,7 +12,6 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
     <title>Bookworld!</title>
   </head>
   <body>
@@ -37,29 +33,31 @@
             </ul>
         </div>
       </nav>
-
+    <!--Envio de formulário via telegram-->
       <?php
+      #setando as váriaveis puxando cada item do formulário a partir do método post.
         $nome = $_POST['nome'];
         $email = $_POST['email'];
         $assunto = $_POST['assunto'];
         $mensagem = $_POST['mensagem'];
+      #Chamando a função envia mensagem passando cada campo como parametro.
         enviaMensagem('nome: '.$nome);
         enviaMensagem('email: '.$email);
         enviaMensagem('assunto: '.$assunto);
         enviaMensagem('mensagem: '.$mensagem);
-
-
-
+      #função que faz o envio para telegram
         function enviaMensagem($arg)
         {
+          #token do bot
             $apiToken = "1224359576:AAExT6RvRaKKI1cKvCEQkuBto-lWERUkrxQ";
+          #infos de envio (id do chat + texto a ser enviado)
             $data = [
                 'chat_id' => '@botzinmaneiro',
-                'text' => $arg
+                'text' => $arg # arg é o que vem enviado do parametro
             ];
             $response = file_get_contents("https://api.telegram.org/bot$apiToken/sendMessage?" . http_build_query($data) );
         }
-
+        #Mensagens de agradecimentos.
         echo "<div class='msgSend'>";
         echo "<h1>Muito obrigado pelo contato $nome!</h1>";
         echo "<h2>Recebemos sua mensagem e entraremos em contato em breve!</h2>";

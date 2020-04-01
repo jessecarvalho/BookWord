@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="pt-br">
   <head>
-    <!-- Required meta tags -->
+    <!-- Meta tags padrões de HTML + favicon + links para estilos -->
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="estilos/style.css">
     <link rel="stylesheet" type="text/css" href="estilos/listaStyle.css">
@@ -34,10 +34,10 @@
             </ul>
         </div>
       </nav>
+    <!--Container de formulario-->
       <div class="container">
         <div class="row">
           <div class="col-sm-2">
-            
           </div>
           <div class="contato col-sm-8">
             <form class="needs-validation" action="formularioEnvio.php" method="POST">
@@ -56,10 +56,8 @@
                   </select>
                   </div>
                 <div class="col-md-8 mb-3">
-
                 <label for="validationTooltip01">Email</label>
                   <input type="text" name = "email" class="form-control" id="validationTooltip01" placeholder="Digite seu email" value="" required>
-
                 </div>
             </div>
             <div class="form-group">

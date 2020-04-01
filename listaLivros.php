@@ -34,19 +34,22 @@
             </ul>
         </div>
       </nav>
-
+    <!--Listagem de livros-->
       <div class="corpo row">
+        <!--coluna vazia para dar espaçamento lateral-->
         <div class="coluna col-sm-1 col-md-2 col-lg-2"></div>
+        <!--Coluna de listagem-->
         <div class="coluna col-sm-7 col-md-6 col-lg-6">
           <div class="row">
             <!--PHP FUNCTIONS -->
             <?php 
+            #solicita dados de conexão 
             require_once('conectabanco.php');
+            #cria novo objeto de conexão
             $objbd = new bd();
             $objbd->conecta_mysql();
-
-            $con = mysqli_connect('localhost', 'root', '', 'livros') or die("Erro ao conectar ao servidor:");
-            
+            #Verifica se algum genero foi passado via GET.
+            #Caso tenha sido passado adicionar clausura where em query            
             $where= '';
             $gen = (isset($_GET['genero']))? $_GET['genero'] : ''; 
             if($gen){
@@ -59,7 +62,7 @@
         
             //seleciona todos os itens da tabela 
             $cmd = "select * from livros as a $where"; 
-            $produtos = mysqli_query($con, $cmd); 
+            $produtos = mysqli_query($objbd->conecta_mysql(), $cmd); 
         
             //conta o total de itens 
             $total = mysqli_num_rows($produtos); 
@@ -72,10 +75,12 @@
         
             //variavel para calcular o início da visualização com base na página atual 
             $inicio = ($registros*$pagina)-$registros; 
-            //seleciona os itens por página 
-
+            
+            //query para selecionar os itens por página e (talvez) por gênero
             $cmd = "select * from livros as a inner join autor as b on a.id = b.id_autor $where order by a.id desc limit $inicio,$registros"; 
-            $livros = mysqli_query($con, $cmd); 
+
+            #executa query
+            $livros = mysqli_query($objbd->conecta_mysql(), $cmd); 
             $total = mysqli_num_rows($livros); 
             //exibe os produtos selecionados 
             while ($livro = mysqli_fetch_array($livros)) { 
@@ -112,6 +117,7 @@
         ?>
         </div>  
         </div>  
+        <!--Lista de gêneros-->
         <div class="coluna col-sm-3 col-md-3 col-lg-2">
           <form action="listaLivros.php" method="get">
             <div class="list-group">

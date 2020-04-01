@@ -32,7 +32,7 @@
             </ul>
         </div>
       </nav>
-
+    <!-- Capa do site -->
       <div class="capa">
         <div class="texto-capa">
           <h1> BOOKWORD </h1>
