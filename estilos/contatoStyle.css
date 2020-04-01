@@ -1,0 +1,15 @@
+body{
+    margin-bottom: 0% !important;
+}
+
+.contato{
+    margin-top: 5% !important;
+}
+
+.msgSend{
+    margin-top: 15%;
+    text-align: center;
+}
+.msgSend h3{
+    color: black;
+}

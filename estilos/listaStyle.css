@@ -1,0 +1,49 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: black;
+	font-family: Helvetica,Arial,sans-serif;
+    overflow-x: hidden;
+    margin-bottom: 10% !important;
+}
+
+.corpo{
+    margin-top: 5%;
+}
+
+.coluna{
+    text-align: center;
+}
+
+.coluna h1{
+    margin-top: 5%;
+    font-size: 14px !important;
+}
+
+.coluna h2{
+    font-size: 12px !important;
+}
+
+.barra-nav{
+    width: 100%;
+    background: rgba(0, 0, 0, 1) !important;
+    position: relative !important;
+}
+
+.capa-livro{
+    width: 170px;
+    height: 270px;
+}
+
+.paginas{
+    width: 100%;
+    font-size: 18px;
+}
+.pagina-bottom{
+    padding: 7px;
+}
+
+.pagina-bottom:hover{
+    color: white;
+    background-color: gray;
+    text-decoration: none;
+}
