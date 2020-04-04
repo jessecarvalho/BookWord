@@ -9,7 +9,7 @@
  - Formulário de contato totalmente funcional que envia mensagens direto ao Telegram. (desabilitado no site online por limitações de hospedagem gratuita).
  - Sistema de contato que envia mensagens para banco de dados (Utilizado online por conta das limitações).
  - Armazenamento de livros em banco de dados a partir do MYsql.
- - Separação de livros por seção utilizando-se do método GET.
+ - Separação de livros por gênero utilizando-se do método GET.
  - 100% do design gráfico do site, desde o logo até o papel de parede.
 
 
